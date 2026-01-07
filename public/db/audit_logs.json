@@ -1,0 +1,412 @@
+[
+  {
+    "id": "al1",
+    "actor_role": "admin",
+    "action": "CREATE_AGENT",
+    "entity_type": "agent",
+    "metadata": {
+      "agentName": "Sarah Johnson"
+    },
+    "created_at": "2025-06-15T10:00:00Z"
+  },
+  {
+    "id": "al2",
+    "actor_role": "admin",
+    "action": "CREATE_AGENT",
+    "entity_type": "agent",
+    "metadata": {
+      "agentName": "Michael Chen"
+    },
+    "created_at": "2025-07-20T14:30:00Z"
+  },
+  {
+    "id": "al3",
+    "actor_role": "admin",
+    "action": "CREATE_AGENT",
+    "entity_type": "agent",
+    "metadata": {
+      "agentName": "Emily Rodriguez"
+    },
+    "created_at": "2025-08-10T09:15:00Z"
+  },
+  {
+    "id": "al4",
+    "actor_role": "admin",
+    "action": "CREATE_INSPECTION",
+    "entity_type": "inspection",
+    "metadata": {
+      "propertyAddress": "100 Park Avenue"
+    },
+    "created_at": "2026-01-05T10:00:00Z"
+  },
+  {
+    "id": "al5",
+    "actor_role": "admin",
+    "action": "CREATE_INSPECTION",
+    "entity_type": "inspection",
+    "metadata": {
+      "propertyAddress": "1234 Sunset Boulevard"
+    },
+    "created_at": "2026-01-02T09:00:00Z"
+  },
+  {
+    "id": "33b66ecb-36a9-43bc-8331-1c1269f150a9",
+    "actor_role": "admin",
+    "action": "LOGIN",
+    "entity_type": "session",
+    "metadata": {
+      "role": "admin"
+    },
+    "created_at": "2026-01-07T13:06:53.903Z"
+  },
+  {
+    "id": "f081acea-1bb1-4f62-986a-5629395efd22",
+    "actor_role": "admin",
+    "action": "LOGIN",
+    "entity_type": "session",
+    "entity_id": "a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
+    "metadata": {
+      "role": "agent",
+      "agentName": "Sarah Johnson"
+    },
+    "created_at": "2026-01-07T13:17:05.683Z"
+  },
+  {
+    "id": "7924fc6f-383d-4d80-abfe-830886ea4829",
+    "actor_role": "agent",
+    "actor_id": "a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
+    "action": "LOGOUT",
+    "entity_type": "session",
+    "entity_id": "a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
+    "metadata": {
+      "role": "agent"
+    },
+    "created_at": "2026-01-07T13:17:54.289Z"
+  },
+  {
+    "id": "eccb4891-32de-4f81-97e3-35b424190de5",
+    "actor_role": "admin",
+    "action": "LOGIN",
+    "entity_type": "session",
+    "metadata": {
+      "role": "admin"
+    },
+    "created_at": "2026-01-07T13:17:59.211Z"
+  },
+  {
+    "id": "2314da3f-95f1-450f-ba4f-5c7f427e3fee",
+    "actor_role": "admin",
+    "action": "LOGOUT",
+    "entity_type": "session",
+    "metadata": {
+      "role": "admin"
+    },
+    "created_at": "2026-01-07T13:18:33.574Z"
+  },
+  {
+    "id": "22c0486a-4fc9-497e-b26e-3f818b283712",
+    "actor_role": "admin",
+    "action": "LOGIN",
+    "entity_type": "session",
+    "entity_id": "b2c3d4e5-f6a7-5b6c-9d0e-1f2a3b4c5d6e",
+    "metadata": {
+      "role": "agent",
+      "agentName": "Michael Chen"
+    },
+    "created_at": "2026-01-07T13:18:59.250Z"
+  },
+  {
+    "id": "24f0a8ca-c173-41ee-a34f-99aeabf192f2",
+    "actor_role": "agent",
+    "actor_id": "b2c3d4e5-f6a7-5b6c-9d0e-1f2a3b4c5d6e",
+    "action": "LOGOUT",
+    "entity_type": "session",
+    "entity_id": "b2c3d4e5-f6a7-5b6c-9d0e-1f2a3b4c5d6e",
+    "metadata": {
+      "role": "agent"
+    },
+    "created_at": "2026-01-07T13:22:42.110Z"
+  },
+  {
+    "id": "be97f5dc-6085-462b-8472-ba91279f975b",
+    "actor_role": "admin",
+    "action": "LOGIN",
+    "entity_type": "session",
+    "metadata": {
+      "role": "admin"
+    },
+    "created_at": "2026-01-07T13:23:41.714Z"
+  },
+  {
+    "id": "1410f562-770b-4068-95ba-dba311c5a6e7",
+    "actor_role": "admin",
+    "action": "LOGOUT",
+    "entity_type": "session",
+    "metadata": {
+      "role": "admin"
+    },
+    "created_at": "2026-01-07T13:36:25.785Z"
+  },
+  {
+    "id": "4b6df2d4-8054-43d7-b3c9-201feae62a42",
+    "actor_role": "admin",
+    "action": "LOGIN",
+    "entity_type": "session",
+    "entity_id": "a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
+    "metadata": {
+      "role": "agent",
+      "agentName": "Sarah Johnson"
+    },
+    "created_at": "2026-01-07T13:36:58.429Z"
+  },
+  {
+    "id": "7ad7c692-7c6d-4742-8feb-3a575645da6c",
+    "actor_role": "agent",
+    "actor_id": "a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
+    "action": "LOGOUT",
+    "entity_type": "session",
+    "entity_id": "a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
+    "metadata": {
+      "role": "agent"
+    },
+    "created_at": "2026-01-07T13:37:14.732Z"
+  },
+  {
+    "id": "bb466adb-9cf8-4810-a218-e3e15714adf8",
+    "actor_role": "admin",
+    "action": "LOGIN",
+    "entity_type": "session",
+    "metadata": {
+      "role": "admin"
+    },
+    "created_at": "2026-01-07T13:37:25.634Z"
+  },
+  {
+    "id": "ba8323de-de07-417e-9f2d-a215862a23f4",
+    "actor_role": "admin",
+    "action": "LOGOUT",
+    "entity_type": "session",
+    "metadata": {
+      "role": "admin"
+    },
+    "created_at": "2026-01-07T13:39:38.891Z"
+  },
+  {
+    "id": "fa209c38-79f7-4df9-ae73-b8ce30f4b4ab",
+    "actor_role": "admin",
+    "action": "LOGIN",
+    "entity_type": "session",
+    "metadata": {
+      "role": "admin"
+    },
+    "created_at": "2026-01-07T13:39:45.993Z"
+  },
+  {
+    "id": "658807c7-41cd-4e24-bbb0-66ad1c63ba1d",
+    "actor_role": "admin",
+    "action": "UPDATE_INSPECTION",
+    "entity_type": "inspection",
+    "entity_id": "i7a8b9c0-d1e2-0f3a-4b5c-6d7e8f9a0b1c",
+    "metadata": {
+      "updatedFields": [
+        "inspectionDate",
+        "propertyAddress",
+        "inspectorName",
+        "status",
+        "notes"
+      ]
+    },
+    "created_at": "2026-01-07T13:44:12.332Z"
+  },
+  {
+    "id": "8414aaff-c04c-453d-b48f-524a431250a8",
+    "actor_role": "admin",
+    "action": "UPLOAD_DOC",
+    "entity_type": "document",
+    "entity_id": "8fd610a3-a7a0-477d-b52c-10b8a71d835a",
+    "metadata": {
+      "agentId": "d4e5f6a7-b8c9-7d8e-1f2a-3b4c5d6e7f8a",
+      "inspectionId": "i8b9c0d1-e2f3-1a4b-5c6d-7e8f9a0b1c2d",
+      "title": "ttt",
+      "category": "InspectionReport",
+      "fileName": "Dmitrii Kargashin. Full Stack.docx",
+      "fileSize": 10017
+    },
+    "created_at": "2026-01-07T13:58:00.471Z"
+  },
+  {
+    "id": "d938886d-b918-45f6-8cbd-cfd3200455f0",
+    "actor_role": "admin",
+    "action": "DELETE_DOC",
+    "entity_type": "document",
+    "entity_id": "8fd610a3-a7a0-477d-b52c-10b8a71d835a",
+    "metadata": {
+      "agentId": "d4e5f6a7-b8c9-7d8e-1f2a-3b4c5d6e7f8a",
+      "title": "ttt",
+      "fileName": "Dmitrii Kargashin. Full Stack.docx"
+    },
+    "created_at": "2026-01-07T14:02:24.176Z"
+  },
+  {
+    "id": "b195cc69-6dc8-445c-89a8-7c8377e829c2",
+    "actor_role": "admin",
+    "action": "UPLOAD_DOC",
+    "entity_type": "document",
+    "entity_id": "6434ddb0-da7a-4611-bc5d-0d88307eb665",
+    "metadata": {
+      "agentId": "d4e5f6a7-b8c9-7d8e-1f2a-3b4c5d6e7f8a",
+      "inspectionId": "i8b9c0d1-e2f3-1a4b-5c6d-7e8f9a0b1c2d",
+      "title": "2435h4ytu",
+      "category": "InspectionReport",
+      "fileName": "Dmitrii Kargashin. Full Stack.pdf",
+      "fileSize": 106805
+    },
+    "created_at": "2026-01-07T14:02:53.024Z"
+  },
+  {
+    "id": "8f6fb4f7-24bf-4046-adba-2024898ae102",
+    "actor_role": "admin",
+    "action": "UPLOAD_DOC",
+    "entity_type": "document",
+    "entity_id": "382690f1-b23c-4d8d-9581-894ab528bd32",
+    "metadata": {
+      "agentId": "d4e5f6a7-b8c9-7d8e-1f2a-3b4c5d6e7f8a",
+      "inspectionId": "i8b9c0d1-e2f3-1a4b-5c6d-7e8f9a0b1c2d",
+      "title": "322435er6t7yui",
+      "category": "InspectionReport",
+      "fileName": "1767794280465-Dmitrii_Kargashin._Full_Stack (4).docx",
+      "fileSize": 10017
+    },
+    "created_at": "2026-01-07T14:03:31.307Z"
+  },
+  {
+    "id": "0f30c870-fbb9-4c95-8126-2f680ba7ddb1",
+    "actor_role": "admin",
+    "action": "CREATE_INSPECTION",
+    "entity_type": "inspection",
+    "entity_id": "9fbd8513-09f3-4d86-bf7a-e747c245efda",
+    "metadata": {
+      "agentId": "d4e5f6a7-b8c9-7d8e-1f2a-3b4c5d6e7f8a",
+      "agentName": "David Thompson",
+      "propertyAddress": "rvewrververv"
+    },
+    "created_at": "2026-01-07T14:04:44.559Z"
+  },
+  {
+    "id": "ce2de553-68bc-42ec-906b-9f9f68ea3fe2",
+    "actor_role": "admin",
+    "action": "CREATE_INSPECTION",
+    "entity_type": "inspection",
+    "entity_id": "b66cd152-8ad6-4bc6-89fe-446b7f1647b4",
+    "metadata": {
+      "agentId": "d4e5f6a7-b8c9-7d8e-1f2a-3b4c5d6e7f8a",
+      "agentName": "David Thompson",
+      "propertyAddress": "w35geg35g"
+    },
+    "created_at": "2026-01-07T14:05:29.479Z"
+  },
+  {
+    "id": "92b92abc-d10a-4c1d-94a5-1ac6222deac0",
+    "actor_role": "admin",
+    "action": "UPLOAD_DOC",
+    "entity_type": "document",
+    "entity_id": "b9284499-e62a-439f-8c1c-1b3804c2205a",
+    "metadata": {
+      "agentId": "d4e5f6a7-b8c9-7d8e-1f2a-3b4c5d6e7f8a",
+      "inspectionId": "b66cd152-8ad6-4bc6-89fe-446b7f1647b4",
+      "title": "gqetbdbd",
+      "category": "InspectionReport",
+      "fileName": "Dmitrii Kargashin. Full Stack.pdf",
+      "fileSize": 106805
+    },
+    "created_at": "2026-01-07T14:05:54.011Z"
+  },
+  {
+    "id": "d37c41f1-988a-4a42-9077-e3504a89a411",
+    "actor_role": "admin",
+    "action": "LOGOUT",
+    "entity_type": "session",
+    "metadata": {
+      "role": "admin"
+    },
+    "created_at": "2026-01-07T14:06:44.123Z"
+  },
+  {
+    "id": "ebb9cc1d-972b-45b5-9810-cec6e3c9de34",
+    "actor_role": "admin",
+    "action": "LOGIN",
+    "entity_type": "session",
+    "entity_id": "b2c3d4e5-f6a7-5b6c-9d0e-1f2a3b4c5d6e",
+    "metadata": {
+      "role": "agent",
+      "agentName": "Michael Chen"
+    },
+    "created_at": "2026-01-07T14:06:54.411Z"
+  },
+  {
+    "id": "7c8ae78a-8ee2-45d5-8e98-5a5871335a5d",
+    "actor_role": "agent",
+    "actor_id": "b2c3d4e5-f6a7-5b6c-9d0e-1f2a3b4c5d6e",
+    "action": "LOGOUT",
+    "entity_type": "session",
+    "entity_id": "b2c3d4e5-f6a7-5b6c-9d0e-1f2a3b4c5d6e",
+    "metadata": {
+      "role": "agent"
+    },
+    "created_at": "2026-01-07T14:07:08.292Z"
+  },
+  {
+    "id": "a6618786-8555-4c3b-8938-3314f35d14e7",
+    "actor_role": "admin",
+    "action": "LOGIN",
+    "entity_type": "session",
+    "metadata": {
+      "role": "admin"
+    },
+    "created_at": "2026-01-07T14:07:13.151Z"
+  },
+  {
+    "id": "76a3147c-a0b1-4758-a1b3-469b75db0660",
+    "actor_role": "admin",
+    "action": "LOGOUT",
+    "entity_type": "session",
+    "metadata": {
+      "role": "admin"
+    },
+    "created_at": "2026-01-07T14:07:26.058Z"
+  },
+  {
+    "id": "060ad1d2-76a0-4315-9b99-10b2452f7d3d",
+    "actor_role": "admin",
+    "action": "LOGIN",
+    "entity_type": "session",
+    "entity_id": "d4e5f6a7-b8c9-7d8e-1f2a-3b4c5d6e7f8a",
+    "metadata": {
+      "role": "agent",
+      "agentName": "David Thompson"
+    },
+    "created_at": "2026-01-07T14:07:32.367Z"
+  },
+  {
+    "id": "7f390964-7f52-4bf0-a79c-00f7e8c2a649",
+    "actor_role": "agent",
+    "actor_id": "d4e5f6a7-b8c9-7d8e-1f2a-3b4c5d6e7f8a",
+    "action": "LOGOUT",
+    "entity_type": "session",
+    "entity_id": "d4e5f6a7-b8c9-7d8e-1f2a-3b4c5d6e7f8a",
+    "metadata": {
+      "role": "agent"
+    },
+    "created_at": "2026-01-07T14:18:41.779Z"
+  },
+  {
+    "id": "3ef66996-84be-4b11-80bb-eb192bf30327",
+    "actor_role": "admin",
+    "action": "LOGIN",
+    "entity_type": "session",
+    "metadata": {
+      "role": "admin"
+    },
+    "created_at": "2026-01-07T14:18:47.509Z"
+  }
+]

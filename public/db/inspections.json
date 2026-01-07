@@ -1,0 +1,92 @@
+[
+  {
+    "id": "i1a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c",
+    "agent_id": "a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
+    "inspection_date": "2026-01-15",
+    "property_address": "100 Park Avenue, Apt 5A, New York, NY 10017",
+    "status": "scheduled",
+    "inspector_name": "Robert Martinez",
+    "notes": "Pre-purchase inspection for luxury condo",
+    "created_at": "2026-01-05T10:00:00Z"
+  },
+  {
+    "id": "i2b3c4d5-e6f7-5a8b-9c0d-1e2f3a4b5c6d",
+    "agent_id": "a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
+    "inspection_date": "2025-12-20",
+    "property_address": "250 West 57th Street, Unit 12B, New York, NY 10019",
+    "status": "completed",
+    "inspector_name": "Lisa Anderson",
+    "notes": "Inspection completed. Minor repairs needed.",
+    "created_at": "2025-12-10T14:30:00Z"
+  },
+  {
+    "id": "i3c4d5e6-f7a8-6b9c-0d1e-2f3a4b5c6d7e",
+    "agent_id": "b2c3d4e5-f6a7-5b6c-9d0e-1f2a3b4c5d6e",
+    "inspection_date": "2026-01-20",
+    "property_address": "1234 Sunset Boulevard, Los Angeles, CA 90028",
+    "status": "scheduled",
+    "inspector_name": "Maria Garcia",
+    "notes": "New construction final inspection",
+    "created_at": "2026-01-02T09:00:00Z"
+  },
+  {
+    "id": "i4d5e6f7-a8b9-7c0d-1e2f-3a4b5c6d7e8f",
+    "agent_id": "b2c3d4e5-f6a7-5b6c-9d0e-1f2a3b4c5d6e",
+    "inspection_date": "2025-12-15",
+    "property_address": "5678 Hollywood Hills Drive, Los Angeles, CA 90068",
+    "status": "completed",
+    "inspector_name": "Kevin Brown",
+    "notes": "Pool and spa inspection included",
+    "created_at": "2025-12-01T11:00:00Z"
+  },
+  {
+    "id": "i5e6f7a8-b9c0-8d1e-2f3a-4b5c6d7e8f9a",
+    "agent_id": "c3d4e5f6-a7b8-6c7d-0e1f-2a3b4c5d6e7f",
+    "inspection_date": "2026-01-25",
+    "property_address": "900 Brickell Bay Drive, Miami, FL 33131",
+    "status": "scheduled",
+    "inspector_name": "Carlos Hernandez",
+    "notes": "Waterfront property - hurricane shutters inspection",
+    "created_at": "2026-01-03T15:00:00Z"
+  },
+  {
+    "id": "i6f7a8b9-c0d1-9e2f-3a4b-5c6d7e8f9a0b",
+    "agent_id": "c3d4e5f6-a7b8-6c7d-0e1f-2a3b4c5d6e7f",
+    "inspection_date": "2025-12-28",
+    "property_address": "1500 Ocean Drive, Miami Beach, FL 33139",
+    "status": "completed",
+    "inspector_name": "Ana Santos",
+    "notes": "Excellent condition. Ready for closing.",
+    "created_at": "2025-12-18T10:30:00Z"
+  },
+  {
+    "id": "i7a8b9c0-d1e2-0f3a-4b5c-6d7e8f9a0b1c",
+    "agent_id": "d4e5f6a7-b8c9-7d8e-1f2a-3b4c5d6e7f8a",
+    "inspection_date": "2026-02-01",
+    "property_address": "333 North Michigan Avenue, Chicago, IL 60601",
+    "status": "scheduled",
+    "inspector_name": "Thomas Wright",
+    "notes": "Commercial property inspection",
+    "created_at": "2026-01-06T08:00:00Z"
+  },
+  {
+    "id": "i8b9c0d1-e2f3-1a4b-5c6d-7e8f9a0b1c2d",
+    "agent_id": "d4e5f6a7-b8c9-7d8e-1f2a-3b4c5d6e7f8a",
+    "inspection_date": "2025-12-10",
+    "property_address": "1000 Lake Shore Drive, Chicago, IL 60611",
+    "status": "completed",
+    "inspector_name": "Patricia Lee",
+    "notes": "Lakefront condo - HVAC needs service",
+    "created_at": "2025-11-28T13:00:00Z"
+  },
+  {
+    "id": "i9c0d1e2-f3a4-2b5c-6d7e-8f9a0b1c2d3e",
+    "agent_id": "c3d4e5f6-a7b8-6c7d-0e1f-2a3b4c5d6e7f",
+    "inspection_date": "2025-10-05",
+    "property_address": "2200 Collins Avenue, Miami Beach, FL 33140",
+    "status": "canceled",
+    "inspector_name": "Carlos Hernandez",
+    "notes": "Buyer withdrew offer",
+    "created_at": "2025-09-25T09:00:00Z"
+  }
+]

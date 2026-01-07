@@ -1,0 +1,28 @@
+[
+  {
+    "id": "doc-michigan-ave-001",
+    "agent_id": "d4e5f6a7-b8c9-7d8e-1f2a-3b4c5d6e7f8a",
+    "inspection_id": "i7a8b9c0-d1e2-0f3a-4b5c-6d7e8f9a0b1c",
+    "title": "Michigan Avenue Pre-Inspection Report",
+    "category": "InspectionReport",
+    "file_name": "michigan-ave-inspection.pdf",
+    "file_size": 784,
+    "mime_type": "application/pdf",
+    "storage_path": "d4e5f6a7-b8c9-7d8e-1f2a-3b4c5d6e7f8a/michigan-ave-inspection.pdf",
+    "uploaded_by": "admin",
+    "created_at": "2026-01-06T10:00:00.000Z"
+  },
+  {
+    "id": "doc-lake-shore-001",
+    "agent_id": "d4e5f6a7-b8c9-7d8e-1f2a-3b4c5d6e7f8a",
+    "inspection_id": "i8b9c0d1-e2f3-1a4b-5c6d-7e8f9a0b1c2d",
+    "title": "Lake Shore Drive Final Inspection Report",
+    "category": "InspectionReport",
+    "file_name": "lake-shore-inspection.pdf",
+    "file_size": 820,
+    "mime_type": "application/pdf",
+    "storage_path": "d4e5f6a7-b8c9-7d8e-1f2a-3b4c5d6e7f8a/lake-shore-inspection.pdf",
+    "uploaded_by": "admin",
+    "created_at": "2025-12-10T15:30:00.000Z"
+  }
+]

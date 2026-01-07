@@ -1,0 +1,62 @@
+[
+  {
+    "id": "a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
+    "full_name": "Sarah Johnson",
+    "email": "sarah.johnson@realty.com",
+    "phone": "(555) 123-4567",
+    "brokerage_name": "Premier Realty Group",
+    "license_number": "RE-2024-001",
+    "address": "123 Main Street, Suite 100, New York, NY 10001",
+    "status": "active",
+    "created_at": "2025-06-15T10:00:00Z",
+    "updated_at": "2025-06-15T10:00:00Z"
+  },
+  {
+    "id": "b2c3d4e5-f6a7-5b6c-9d0e-1f2a3b4c5d6e",
+    "full_name": "Michael Chen",
+    "email": "michael.chen@homefinders.com",
+    "phone": "(555) 234-5678",
+    "brokerage_name": "HomeFinders Inc.",
+    "license_number": "RE-2024-002",
+    "address": "456 Oak Avenue, Los Angeles, CA 90001",
+    "status": "active",
+    "created_at": "2025-07-20T14:30:00Z",
+    "updated_at": "2025-07-20T14:30:00Z"
+  },
+  {
+    "id": "c3d4e5f6-a7b8-6c7d-0e1f-2a3b4c5d6e7f",
+    "full_name": "Emily Rodriguez",
+    "email": "emily.rodriguez@luxuryhomes.com",
+    "phone": "(555) 345-6789",
+    "brokerage_name": "Luxury Homes International",
+    "license_number": "RE-2024-003",
+    "address": "789 Palm Drive, Miami, FL 33101",
+    "status": "active",
+    "created_at": "2025-08-10T09:15:00Z",
+    "updated_at": "2025-08-10T09:15:00Z"
+  },
+  {
+    "id": "d4e5f6a7-b8c9-7d8e-1f2a-3b4c5d6e7f8a",
+    "full_name": "David Thompson",
+    "email": "david.thompson@cityproperties.com",
+    "phone": "(555) 456-7890",
+    "brokerage_name": "City Properties LLC",
+    "license_number": "RE-2024-004",
+    "address": "321 Urban Way, Chicago, IL 60601",
+    "status": "active",
+    "created_at": "2025-09-05T11:45:00Z",
+    "updated_at": "2025-09-05T11:45:00Z"
+  },
+  {
+    "id": "e5f6a7b8-c9d0-8e9f-2a3b-4c5d6e7f8a9b",
+    "full_name": "Jennifer Williams",
+    "email": "jennifer.williams@coastalrealty.com",
+    "phone": "(555) 567-8901",
+    "brokerage_name": "Coastal Realty Partners",
+    "license_number": "RE-2024-005",
+    "address": "654 Beach Boulevard, San Diego, CA 92101",
+    "status": "inactive",
+    "created_at": "2025-10-01T16:20:00Z",
+    "updated_at": "2025-10-01T16:20:00Z"
+  }
+]
