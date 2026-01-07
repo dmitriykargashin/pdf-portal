@@ -26,11 +26,11 @@ const statusOptions = [
 ]
 
 const columns = [
-  { id: 'fullName', header: 'Name' },
-  { id: 'brokerageName', header: 'Brokerage' },
-  { id: 'phone', header: 'Phone' },
-  { id: 'email', header: 'Email' },
-  { id: 'status', header: 'Status' },
+  { id: 'fullName', header: 'Name', accessorKey: 'fullName' },
+  { id: 'brokerageName', header: 'Brokerage', accessorKey: 'brokerageName' },
+  { id: 'phone', header: 'Phone', accessorKey: 'phone' },
+  { id: 'email', header: 'Email', accessorKey: 'email' },
+  { id: 'status', header: 'Status', accessorKey: 'status' },
   { id: 'actions', header: '' }
 ]
 
@@ -118,6 +118,18 @@ const handleDelete = async () => {
           >
             {{ row.original.fullName }}
           </NuxtLink>
+        </template>
+
+        <template #brokerageName-cell="{ row }">
+          {{ row.original.brokerageName }}
+        </template>
+
+        <template #phone-cell="{ row }">
+          {{ row.original.phone }}
+        </template>
+
+        <template #email-cell="{ row }">
+          {{ row.original.email }}
         </template>
 
         <template #status-cell="{ row }">

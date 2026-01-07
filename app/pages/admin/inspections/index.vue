@@ -21,11 +21,11 @@ const statusOptions = [
 ]
 
 const columns = [
-  { id: 'inspectionDate', header: 'Date' },
-  { id: 'propertyAddress', header: 'Property' },
+  { id: 'inspectionDate', header: 'Date', accessorKey: 'inspectionDate' },
+  { id: 'propertyAddress', header: 'Property', accessorKey: 'propertyAddress' },
   { id: 'agent', header: 'Agent' },
-  { id: 'inspectorName', header: 'Inspector' },
-  { id: 'status', header: 'Status' },
+  { id: 'inspectorName', header: 'Inspector', accessorKey: 'inspectorName' },
+  { id: 'status', header: 'Status', accessorKey: 'status' },
   { id: 'actions', header: '' }
 ]
 </script>
@@ -73,6 +73,10 @@ const columns = [
           {{ formatDate(row.original.inspectionDate) }}
         </template>
 
+        <template #propertyAddress-cell="{ row }">
+          {{ row.original.propertyAddress }}
+        </template>
+
         <template #agent-cell="{ row }">
           <NuxtLink
             v-if="row.original.agent"
@@ -82,6 +86,10 @@ const columns = [
             {{ row.original.agent.fullName }}
           </NuxtLink>
           <span v-else class="text-gray-400">—</span>
+        </template>
+
+        <template #inspectorName-cell="{ row }">
+          {{ row.original.inspectorName }}
         </template>
 
         <template #status-cell="{ row }">
