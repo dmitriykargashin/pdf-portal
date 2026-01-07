@@ -214,7 +214,12 @@ const downloadDocument = async (doc: Document) => {
     </template>
 
     <!-- Document Viewer modal -->
-    <UModal v-model:open="showDocViewer" :ui="{ content: 'max-w-5xl' }">
+    <UModal 
+      v-model:open="showDocViewer" 
+      :ui="{ content: 'max-w-5xl' }"
+      :title="viewingDoc?.title || 'Document Viewer'"
+      :description="viewingDoc?.fileName || 'View document'"
+    >
       <template #content>
         <UCard>
           <template #header>

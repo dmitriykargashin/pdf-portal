@@ -516,7 +516,11 @@ const formatDocDate = (dateString: string) => {
     </UCard>
 
     <!-- Upload modal -->
-    <UModal v-model:open="showUploadModal">
+    <UModal 
+      v-model:open="showUploadModal"
+      title="Upload Document"
+      description="Upload a document for this inspection"
+    >
       <template #content>
         <UCard>
           <template #header>

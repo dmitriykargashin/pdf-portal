@@ -443,7 +443,12 @@ const formatDate = (dateString: string) => {
     </UCard>
 
     <!-- Document Viewer modal -->
-    <UModal v-model:open="showPdfViewer" :ui="{ content: 'max-w-4xl' }">
+    <UModal 
+      v-model:open="showPdfViewer" 
+      :ui="{ content: 'max-w-4xl' }"
+      :title="viewingDoc?.title || 'Document Viewer'"
+      :description="viewingDoc?.fileName || 'View document'"
+    >
       <template #content>
         <UCard>
           <template #header>
@@ -502,7 +507,11 @@ const formatDate = (dateString: string) => {
     </UModal>
 
     <!-- Delete document modal -->
-    <UModal v-model:open="showDeleteDocModal">
+    <UModal 
+      v-model:open="showDeleteDocModal"
+      title="Delete Document"
+      description="Confirm document deletion"
+    >
       <template #content>
         <UCard>
           <template #header>

@@ -176,7 +176,11 @@ const handleDelete = async () => {
     </UCard>
 
     <!-- Delete confirmation modal -->
-    <UModal v-model:open="showDeleteModal">
+    <UModal 
+      v-model:open="showDeleteModal"
+      title="Delete Agent"
+      description="Confirm agent deletion"
+    >
       <template #content>
         <UCard>
           <template #header>

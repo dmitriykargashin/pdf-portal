@@ -27,11 +27,12 @@ export default defineNuxtConfig({
     // Server-side only
     adminPassword: process.env.ADMIN_PASSWORD || 'admin123',
     agentPasscode: process.env.AGENT_PASSCODE || 'agent123',
-    supabaseServiceKey: process.env.SUPABASE_SERVICE_KEY || '',
+    tursoDbUrl: process.env.TURSO_DATABASE_URL || '',
+    tursoAuthToken: process.env.TURSO_AUTH_TOKEN || '',
+    storageMode: process.env.STORAGE_MODE || 'local',
     // Public (exposed to client)
     public: {
-      supabaseUrl: process.env.SUPABASE_URL || '',
-      supabaseKey: process.env.SUPABASE_KEY || ''
+      // No public config needed for now
     }
   },
 

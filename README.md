@@ -5,66 +5,70 @@ A modern web application for real estate agents and internal staff to manage pro
 ## 🚀 Tech Stack
 
 - **Framework**: Nuxt 4 + Vue 3 + TypeScript
-- **Styling**: Tailwind CSS + Nuxt UI
-- **Database**: JSON files (demo mode) / Supabase Postgres (production)
-- **Storage**: Local public folder (demo mode) / Supabase Storage (production)
+- **Styling**: Tailwind CSS + Nuxt UI v4
+- **Database**: Turso (libSQL) - Serverless SQLite
+- **Storage**: In-memory file storage (for demo; use S3/R2 for production)
 - **Deployment**: Vercel
 
-## 🎯 Demo Mode
+## 🗄️ Database
 
-This application runs in **demo mode** by default, using JSON files stored in `public/db/` for data persistence and `public/uploads/` for file storage. This allows you to run the full application without any external services.
+This application uses **Turso** (libSQL), a serverless SQLite database that works perfectly with Vercel's serverless functions. The database is automatically initialized with seed data on first connection.
 
-**Demo Credentials:**
-- **Admin**: Password `admin123`
-- **Agent**: Use any Agent ID from the list + passcode `agent123`
+### Demo Credentials
 
-**Sample Agents for Agent Login:**
-- Sarah Johnson: `a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d`
-- Michael Chen: `b2c3d4e5-f6a7-5b6c-9d0e-1f2a3b4c5d6e`
-- Emily Rodriguez: `c3d4e5f6-a7b8-6c7d-0e1f-2a3b4c5d6e7f`
+**Admin Login:**
+- Password: `admin123`
+
+**Agent Login:**
+- Email: `david.thompson@cityproperties.com`
+- Passcode: `agent123`
 
 ## 📋 Features
 
 ### Admin Dashboard
 - View key metrics (total agents, inspections, documents)
 - Recent activity feed
-- Quick actions for common tasks
+- Quick navigation to all sections
 
 ### Agent Management
 - Create, edit, and delete agent profiles
-- Search and filter agents
-- View agent details with tabs for profile, documents, and inspections
+- View agent details with tabs for Profile, Documents, and Inspections
+- Documents linked to inspections for each agent
 
 ### Document Management
-- Secure PDF upload and storage
+- Upload PDF documents through inspection pages
+- Documents are linked to specific inspections
 - Categorize documents (W9, Agreement, Insurance, Inspection Reports, Other)
 - View documents inline with PDF viewer
-- Download with signed URLs (short TTL for security)
+- Download documents directly
 
 ### Inspection Tracking
 - Schedule and manage property inspections
-- Auto-populate agent information
 - Track inspection status (scheduled, completed, canceled)
+- Upload documents to inspections
+- View all documents for an inspection
 
-### Agent Portal
-- Agents can view their own profile (read-only)
-- Access their documents
-- View their inspection history
+### Agent Portal (for Agents)
+- View own profile information (read-only)
+- Access personal documents
+- View inspection history with detail pages
+- View and download documents for each inspection
 
-### Security
+### Security Features
 - Role-based access control (Admin vs Agent)
-- Private storage bucket for PDFs
-- Signed URLs for secure document access
+- Session-based authentication with cookies
+- Agents can only access their own data
 - Audit logging for sensitive operations
 
-## 🔧 Setup
+## 🔧 Quick Start
 
 ### Prerequisites
 
 - Node.js 18+
-- npm or yarn
+- npm
+- Turso CLI (optional, for database management)
 
-### Quick Start (Demo Mode)
+### Installation
 
 ```bash
 # Clone and install
@@ -72,83 +76,35 @@ git clone <repository-url>
 cd pdf-portal
 npm install
 
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your Turso credentials
+
 # Start development server
 npm run dev
 ```
 
-Visit `http://localhost:3000` and login with:
-- **Admin**: Password `admin123`
-- **Agent**: Agent ID + Passcode `agent123`
+Visit `http://localhost:3000` and login with the demo credentials above.
 
-### Production Setup (with Supabase)
+### Setting up Turso Database
 
-See the "Supabase Setup" section below for connecting to a real database.
+1. **Create a Turso account** at [turso.tech](https://turso.tech)
+2. **Create a database**:
+   ```bash
+   turso db create re-database
+   ```
+3. **Get your database URL and auth token**:
+   ```bash
+   turso db show re-database --url
+   turso db tokens create re-database
+   ```
+4. **Add credentials to `.env`**:
+   ```
+   TURSO_DATABASE_URL=libsql://your-database-url.turso.io
+   TURSO_AUTH_TOKEN=your-auth-token
+   ```
 
-### 1. Clone and Install
-
-```bash
-git clone <repository-url>
-cd pdf-portal
-npm install
-```
-
-### 2. Configure Supabase
-
-1. Create a new Supabase project at [supabase.com](https://supabase.com)
-2. Go to SQL Editor and run the schema:
-   - Copy contents of `supabase/schema.sql` and run in SQL Editor
-3. Run the seed data (optional):
-   - Copy contents of `supabase/seed.sql` and run in SQL Editor
-4. Create a storage bucket:
-   - Go to Storage → New bucket
-   - Name: `documents`
-   - Public: OFF (unchecked)
-
-### 3. Environment Variables
-
-Create a `.env` file from the example:
-
-```bash
-cp .env.example .env
-```
-
-Fill in the values:
-
-```env
-# Authentication
-ADMIN_PASSWORD=your-admin-password
-AGENT_PASSCODE=your-agent-passcode
-
-# Supabase Configuration
-SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_KEY=your-anon-key
-SUPABASE_SERVICE_KEY=your-service-role-key
-```
-
-Find your Supabase keys:
-- Go to Project Settings → API
-- Copy the `URL`, `anon public` key, and `service_role` key
-
-### 4. Run Development Server
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000)
-
-## 🔐 Authentication
-
-This prototype uses stub authentication:
-
-### Admin Login
-- Password: Set via `ADMIN_PASSWORD` environment variable
-- Default: `admin123`
-
-### Agent Login
-- Select agent from dropdown (or enter agent ID)
-- Passcode: Set via `AGENT_PASSCODE` environment variable
-- Default: `agent123`
+The database tables and seed data are created automatically on first request.
 
 ## 📁 Project Structure
 
@@ -156,11 +112,19 @@ This prototype uses stub authentication:
 /
 ├── app/
 │   ├── assets/css/         # Global CSS styles
-│   ├── components/         # Vue components
-│   ├── composables/        # Vue composables (auth, api, utils)
+│   ├── composables/        # Vue composables (useAuth, useAgents, etc.)
 │   ├── layouts/            # Page layouts (default, auth)
 │   ├── middleware/         # Route middleware (auth guards)
-│   ├── pages/              # File-based routing pages
+│   ├── pages/              # File-based routing
+│   │   ├── admin/          # Admin pages
+│   │   │   ├── agents/     # Agent management
+│   │   │   ├── inspections/# Inspection management
+│   │   │   └── audit.vue   # Audit log
+│   │   ├── portal/         # Agent portal pages
+│   │   │   ├── inspections/# Agent inspection views
+│   │   │   ├── documents.vue
+│   │   │   └── index.vue
+│   │   └── login.vue       # Login page
 │   └── types/              # TypeScript type definitions
 ├── server/
 │   ├── api/                # Nitro API routes
@@ -170,134 +134,97 @@ This prototype uses stub authentication:
 │   │   ├── dashboard/      # Dashboard stats endpoint
 │   │   ├── documents/      # Document management endpoints
 │   │   └── inspections/    # Inspection CRUD endpoints
-│   └── utils/              # Server utilities (db, storage, session)
-├── supabase/
-│   ├── schema.sql          # Database schema
-│   ├── seed.sql            # Sample data
-│   └── storage.sql         # Storage bucket config
-└── public/                 # Static assets
+│   └── utils/              # Server utilities
+│       ├── jsonDb.ts       # Database wrapper (uses Turso)
+│       ├── tursoDb.ts      # Turso database operations
+│       ├── session.ts      # Session management
+│       └── audit.ts        # Audit logging
+└── .env.example            # Environment variable template
 ```
-
-## 🚀 Deployment (Vercel)
-
-### 1. Push to GitHub
-
-```bash
-git add .
-git commit -m "Initial commit"
-git push origin main
-```
-
-### 2. Deploy to Vercel
-
-1. Go to [vercel.com](https://vercel.com)
-2. Import your GitHub repository
-3. Add environment variables:
-   - `ADMIN_PASSWORD`
-   - `AGENT_PASSCODE`
-   - `SUPABASE_URL`
-   - `SUPABASE_KEY`
-   - `SUPABASE_SERVICE_KEY`
-4. Deploy!
 
 ## 📝 API Endpoints
 
 ### Authentication
-- `POST /api/auth/login` - Login
+- `POST /api/auth/login` - Login (admin or agent)
 - `POST /api/auth/logout` - Logout
 - `GET /api/auth/session` - Get current session
 
 ### Agents
-- `GET /api/agents` - List agents
-- `POST /api/agents` - Create agent
-- `GET /api/agents/:id` - Get agent
-- `PUT /api/agents/:id` - Update agent
-- `DELETE /api/agents/:id` - Delete agent
+- `GET /api/agents` - List all agents
+- `POST /api/agents` - Create agent (admin only)
+- `GET /api/agents/:id` - Get agent by ID
+- `PUT /api/agents/:id` - Update agent (admin only)
+- `DELETE /api/agents/:id` - Delete agent (admin only)
 
 ### Documents
-- `GET /api/documents` - List documents
-- `POST /api/documents` - Upload document
-- `GET /api/documents/:id/url` - Get signed URL
-- `DELETE /api/documents/:id` - Delete document
+- `GET /api/documents` - List documents (filter by agentId, inspectionId)
+- `POST /api/documents` - Upload document (with inspectionId)
+- `GET /api/documents/:id/url` - Get document URL for viewing
+- `DELETE /api/documents/:id` - Delete document (admin only)
 
 ### Inspections
-- `GET /api/inspections` - List inspections
-- `POST /api/inspections` - Create inspection
-- `GET /api/inspections/:id` - Get inspection
-- `PUT /api/inspections/:id` - Update inspection
+- `GET /api/inspections` - List inspections (filter by agentId, status)
+- `POST /api/inspections` - Create inspection (admin only)
+- `GET /api/inspections/:id` - Get inspection by ID
+- `PUT /api/inspections/:id` - Update inspection (admin only)
 
 ### Dashboard
-- `GET /api/dashboard/stats` - Get dashboard stats
+- `GET /api/dashboard/stats` - Get dashboard statistics
 - `GET /api/dashboard/activity` - Get recent activity
 
 ### Audit
-- `GET /api/audit` - Get audit logs
+- `GET /api/audit` - Get audit logs (admin only)
 
-## 🛡️ Security Considerations
-
-- PDFs are stored in a private Supabase Storage bucket
-- Document access requires authentication
-- Signed URLs expire after 60 seconds
-- Role-based access control on all endpoints
-- Audit logging for sensitive operations
-- Admin-only access for create/update/delete operations
-- Agents can only access their own data
-
-## 📜 License
-
-MIT
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+## 🛠️ Development Commands
 
 ```bash
-# npm
+# Start development server
 npm run dev
 
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
+# Build for production
 npm run build
 
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
+# Preview production build
 npm run preview
 
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+# Type check
+npm run typecheck
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## 🚀 Deploying to Vercel
+
+1. **Push your code to GitHub**
+
+2. **Import to Vercel**:
+   - Go to [vercel.com](https://vercel.com) and import your repository
+   - Vercel will auto-detect Nuxt and configure the build
+
+3. **Create Vercel Blob Storage**:
+   - In Vercel Dashboard, go to **Storage** tab
+   - Click **Create** → **Blob**
+   - Name it (e.g., "pdf-portal-files")
+   - Connect it to your project
+   - The `BLOB_READ_WRITE_TOKEN` will be automatically added to your project
+
+4. **Configure Environment Variables** in Vercel Dashboard → Settings → Environment Variables:
+   ```
+   ADMIN_PASSWORD=your-secure-admin-password
+   AGENT_PASSCODE=your-secure-agent-passcode
+   TURSO_DATABASE_URL=libsql://your-database.turso.io
+   TURSO_AUTH_TOKEN=your-turso-auth-token
+   ```
+   Note: `BLOB_READ_WRITE_TOKEN` is auto-added when you connect Blob storage.
+
+5. **Deploy!** Vercel will build and deploy automatically
+
+### Storage
+
+- **Database**: Turso (libSQL) - Serverless SQLite database
+- **File Storage**: Vercel Blob - Persistent file storage for PDF uploads
+  - Free tier: 1GB storage, 1GB bandwidth/month
+  - Files persist across deployments and cold starts
+
+## 📄 License
+
+MIT

@@ -115,7 +115,12 @@ const formatDate = (dateString: string) => {
     </UCard>
 
     <!-- PDF Viewer modal -->
-    <UModal v-model:open="showPdfViewer" :ui="{ width: 'max-w-4xl' }">
+    <UModal 
+      v-model:open="showPdfViewer" 
+      :ui="{ content: 'max-w-4xl' }"
+      :title="viewingDoc?.title || 'Document Viewer'"
+      :description="viewingDoc?.fileName || 'View document'"
+    >
       <template #content>
         <UCard>
           <template #header>
